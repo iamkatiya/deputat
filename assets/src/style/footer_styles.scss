@@ -1,0 +1,71 @@
+.footer
+{
+  padding: 60px 0 0;
+  background: #343E4D;
+}
+.footer-info-contacts
+{
+  margin-left: 60px;
+}
+.footer-email p
+{
+  background-image: url("/../img/mail-icon.svg");
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: center;
+  font-family: Circe-Regular, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 0;
+  padding-left: 25px;
+  letter-spacing: 0.05em;
+  padding-top: 2px;
+}
+.footer-email
+{
+  margin-left: 53px;
+}
+.footer-nav
+{
+  padding-top: 50px;
+}
+.footer-bottom
+{
+  border-bottom: 4px solid #5A8F52;
+  padding-bottom: 20px;
+}
+.footer-copyright
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 0;
+  a{
+    color: #fff;
+    opacity: .7;
+    &:hover
+    {
+      opacity: 1;
+      color: #fff;
+    }
+  }
+}
+.personal-info
+{
+  font-family: Circe-Regular, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  transition: .5s;
+}
+.copyright
+{
+  margin-left: auto;
+  transition: .5s;
+}
+.footer-info
+{
+  a:hover
+  {
+    text-decoration: none;
+    color: #fff;
+  }
+}

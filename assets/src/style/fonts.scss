@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'merriweatherregular';
+  src: url('../fonts/merriweatherregular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'merriweatherbold';
+  src: url('../fonts/merriweatherbold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circe-Regular';
+  src: url('../fonts/Circe-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circe-Normal';
+  src: url('../fonts/Circe-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circe-Bold';
+  src: url('../fonts/Circe-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+.gerb-logo-text
+{
+  font-family: merriweatherbold, sans-serif;
+  font-size: 18px;
+  color: #fff;
+  line-height: 18px;
+}
+.blocks-head
+{
+  font-family: 'merriweatherbold',sans-serif;
+  font-size: 46px;
+  color: #343E4D;
+}
+.white
+{
+  color: #fff;
+  padding-bottom: 20px;
+  position: relative;
+  &::before
+  {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: #5A8F52;
+    bottom: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,410 @@
+@media (max-width: 1199px) {
+  .header-info-search input[type=text]
+  {
+    width: 300px;
+  }
+  .support-programs-block-item
+  {
+    padding: 25px 15px 24px;
+  }
+  .support-programs-block-item h3::before
+  {
+    left: -15px;
+  }
+  .life-row
+  {
+    flex-wrap: wrap;
+    flex: 50%;
+  }
+  .news-row-item
+  {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 992px) {
+  .burger
+  {
+    display: none;
+  }
+}
+@media (max-width: 991px)
+{
+  .about-flexbox
+  {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .about-flexbox-menu
+  {
+    flex: 100%;
+    margin-right: 0;
+  }
+  .about-flexbox-content
+  {
+    flex: 100%;
+  }
+  .about-flexbox-content-history
+  {
+    flex-wrap: wrap;
+    padding: 30px;
+  }
+  .about-flexbox-content-administration
+  {
+    padding: 30px;
+  }
+  .about-flexbox-content-administration-block
+  {
+    flex-wrap: wrap;
+  }
+  .administration-text
+  {
+    padding-left: 0;
+    padding-top: 30px;
+    padding-right: 0;
+  }
+  .pr-33
+  {
+    padding-right: 0;
+  }
+  .about-flexbox-content-history-photo img
+  {
+    width: 100%;
+  }
+  .contact-block__title.new
+  {
+    padding: 30px;
+  }
+  .about-flexbox-content-history-text
+  {
+    flex: 100%;
+  }
+  .header-info-contacts
+  {
+    margin-left: auto;
+  }
+  .header-info-search
+  {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  .header-info-search input[type=text]
+  {
+    width: 210px;
+  }
+  .header-nav-ul
+  {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    li
+    {
+      flex: 100%;
+      text-align: right;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  .header-nav
+  {
+    position: absolute;
+    max-width: 250px;
+    top: 79px;
+    right: -100%;
+    z-index: 10;
+    padding-right: 20px;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #5A8F52;
+    transition: .6s;
+  }
+  .open
+  {
+    right: 0;
+  }
+  .personal-info, .copyright
+  {
+    padding-left: 15px;
+  }
+  .ml-auto
+  {
+    margin-left: 15px!important;
+    margin-top: 20px;
+  }
+  .footer-copyright {
+    flex-wrap: wrap;
+  }
+  .copyright
+  {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  .personal-info
+  {
+    flex: 100%;
+  }
+  .footer-gerb
+  {
+    padding-left: 15px;
+  }
+  .footer-email {
+    margin-left: 15px;
+    flex: 100%;
+  }
+  .mob-wrap
+  {
+    flex-wrap: wrap;
+  }
+  .footer-nav
+  {
+    display: none;
+  }
+  .support-programs-block
+  {
+    flex-wrap: wrap;
+  }
+  .support-programs-block-item
+  {
+    flex: 100%;
+  }
+  .support-programs-block-item:first-child, .support-programs-block-item:last-child {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .support-programs-block-item
+  {
+    margin-bottom: 20px;
+  }
+  .district-in-numbers-box
+  {
+    flex-wrap: wrap;
+  }
+  .district-in-numbers-items
+  {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  .flex-new
+  {
+    flex-wrap: wrap;
+  }
+  .about-photo
+  {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .about-text
+  {
+    padding: 50px 0 0;
+  }
+  .quotes
+  {
+    display: none;
+  }
+  .contact-block
+  {
+    flex-wrap: wrap;
+  }
+  .vertical-green-block
+  {
+    display: none;
+  }
+}
+@media (max-width: 768px)
+{
+  .main-banner-textblock-head p
+  {
+    font-size: 30px;
+    line-height: 100%;
+  }
+  .life-block
+  {
+    flex-wrap: wrap;
+  }
+  .news-right
+  {
+    margin-left: 0;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 650px)
+{
+  .blocks-head, .com-with-adm__title
+  {
+    font-size: 35px;
+  }
+  .about-text
+  {
+    padding-top: 0;
+  }
+  .about
+  {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .support-programs
+  {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .support-programs-block
+  {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .gallery
+  {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+  .district-in-numbers
+  {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .com-with-adm
+  {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 576px)
+{
+  .about-flexbox-content-administration, .about-flexbox-content-history {
+    padding: 15px;
+  }
+  .contact-block__title.new
+  {
+    padding: 30px 15px;
+  }
+  .personal-info, .copyright
+  {
+    padding-left: 0;
+  }
+  .main-banner-textblock-breadcrumbs p {
+    font-size: 12px;
+  }
+  .header-info .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .pl-0
+  {
+    padding-left: 15px!important;
+  }
+  .pr-0
+  {
+    padding-right: 15px!important;
+  }
+}
+@media (max-width: 440px)
+{
+  .support-programs-more-button
+  {
+    width: 100%;
+  }
+  .blocks-head, .com-with-adm__title {
+    font-size: 25px;
+  }
+
+  .header-info-contacts {
+    margin-bottom: 30px;
+  }
+  .header-nav
+  {
+    width: 100%;
+    max-width: max-content;
+  }
+  .header-info-search input[type=text] {
+    width: 100%;
+  }
+  .header-info-contacts p
+  {
+    background-position-x: right;
+    text-align: right;
+    padding-right: 25px;
+  }
+  .burger
+  {
+    margin-left: auto;
+  }
+  .main-banner-textblock {
+    padding: 50px 0 160px;
+  }
+  .mr-76
+  {
+    margin-right: 25px;
+  }
+  .contact-block__row-wrap
+  {
+    flex-wrap: wrap;
+  }
+  .contact-block__fio, .contact-block__mail
+  {
+    flex: 100%;
+    max-width: 290px;
+  }
+  .contact-block__comment textarea
+  {
+    max-width: 290px;
+  }
+  .additional-files
+  {
+    flex-wrap: wrap;
+  }
+  .confidence-block
+  {
+    flex-wrap: wrap;
+  }
+  .contact-block
+  {
+    padding: 26px 15px;
+  }
+  .contact-block__green-block
+  {
+    margin-left: -15px;
+  }
+  .contact-block__mail, .contact-block__comment
+  {
+    margin-top: 20px;
+  }
+  .confidence-block__confidence
+  {
+    margin-bottom: 20px;
+  }
+  .news-row-item img
+  {
+    width: 100%;
+  }
+}
+@media (max-width: 374px) {
+  .district-item .number
+  {
+    font-size: 40px;
+  }
+  .district-item p
+  {
+    font-size: 14px;
+  }
+  .main-banner-textblock-head p
+  {
+    font-size: 28px;
+  }
+  .support-programs-more-button
+  {
+    font-size: 17px;
+  }
+}
+@media (max-width: 991px)
+{
+  .footer-info-contacts
+  {
+    margin-left: 15px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    flex: 100%;
+    p {
+      text-align: left;
+      background-position-x: left;
+    }
+  }
+}

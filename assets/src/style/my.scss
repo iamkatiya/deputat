@@ -1,0 +1,22 @@
+.button
+{
+  padding: 5px 25px;
+  background: #5A8F52;
+  border: 1px solid #5A8F52;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  font-family: Circe-Regular, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  transition: .5s;
+  &:hover
+  {
+    background: #41693A;
+    border: 1px solid #41693A;
+  }
+}
+body, html
+{
+  position: relative;
+  overflow-x: hidden;
+}
