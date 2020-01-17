@@ -29,21 +29,23 @@
     font-family: 'Circe-Normal', sans-serif;
     color: #343E4D;
     line-height: 22px;
+    transition: .5s;
   }
-  img
+  svg
   {
     margin-right: 20px;
+    fill: #343E4D;
+    transition: .5s;
   }
   &:hover
   {
-    background: #5A8F52;
     p
     {
-      color: #fff;
+      color: #5A8F52;
     }
-    img
+    svg
     {
-      filter: brightness(0) invert(1);
+      fill: #5A8F52;
     }
   }
 }
@@ -87,16 +89,16 @@
     font-family: 'Circe-Normal', sans-serif;
   }
 }
-.item-active
+.item-active, .item-active:hover
 {
   background: #5A8F52;
   p
   {
     color: #fff;
   }
-  img
+  svg
   {
-    filter: brightness(0) invert(1);
+    fill: white;
   }
 }
 .pr-33

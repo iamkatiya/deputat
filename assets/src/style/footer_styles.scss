@@ -61,11 +61,14 @@
   margin-left: auto;
   transition: .5s;
 }
-.footer-info
+.footer-info-contacts, .footer-email
 {
   a:hover
   {
-    text-decoration: none;
-    color: #fff;
+    text-decoration: transparent;
   }
+}
+.footer-copyright a
+{
+  text-decoration: transparent;
 }

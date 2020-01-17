@@ -4,6 +4,16 @@
   height: 576px;
   background-size: cover;
 }
+.sec-banner
+{
+  background-image: url("/../img/distr-in-numb-backgr.png");
+  height: 576px;
+  background-size: cover;
+}
+.confidence-block__confidence:hover
+{
+  cursor: pointer;
+}
 .main-banner-textblock
 {
   padding: 112px 0 160px;
@@ -80,11 +90,15 @@
 }
 .main-banner-button
 {
-  padding: 3px 25px 7px;
+  padding: 5px 25px;
   background: rgba(90, 143, 82, 0.25);
   border: 1px solid #5A8F52;
   border-radius: 3px;
   transition: .5s;
+  &_new
+  {
+    padding: 3px 25px 7px;
+  }
   &:hover
   {
     background: #5A8F52;
@@ -283,11 +297,15 @@
 .news-right-item
 {
   border-bottom: 1px solid #5A8F52;
-  padding: 11px 0;
+  padding: 9px 0;
   &:last-child
   {
     border-bottom: none;
   }
+}
+.life-block
+{
+  margin-bottom: 30px;
 }
 .district-life-breadcrumbs
 {
@@ -581,6 +599,7 @@
 }
 
 .additional-files {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -596,11 +615,13 @@
 
   &__download {
     display: flex;
+    position: relative;
     padding: 6px 8px 4px 12px;
     background: #F5F7FB;
     border-radius: 5px;
     width: 58%;
     justify-content: space-between;
+    z-index: 0;
   }
 
   &__expansion {
@@ -641,7 +662,7 @@ input[type="checkbox"] {
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 6px;
+  top: 0;
   left: 0;
   cursor: pointer;
 }
@@ -665,7 +686,7 @@ input[type="checkbox"]:checked ~ .psevdo-checkbox:after {
     position: absolute;
     content: '';
     display: inline-block;
-    top: 4px;
+    top: 0;
     left: 0;
     width: 18px;
     height: 18px;
@@ -680,10 +701,55 @@ input[type="checkbox"]:checked ~ .psevdo-checkbox:after {
     position: absolute;
     content: '';
     display: inline-block;
-    top: 7px;
+    top: 3px;
     left: 3.3px;
     width: 12px;
     height: 12px;
     border-radius: 3px;
+    transition: .5s;
+  }
+}
+.p-7
+{
+  padding: 7px 23px;
+}
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+}
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+input[type="text"], textarea
+{
+font-family: 'Circe-Normal', sans-serif;
+}
+input[type="file"] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  &:hover
+  {
+    cursor: pointer;
   }
 }

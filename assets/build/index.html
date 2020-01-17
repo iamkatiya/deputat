@@ -19,7 +19,7 @@
                     <input type="text" class="search-form">
                 </form>
                 <div class="header-info-contacts" id="myDiv3">
-                    <p>+7 3952 42 22 43</p>
+                    <a href="tel:+73952422243"><p>+7 3952 42 22 43</p></a>
                 </div>
                  <div class="burger" id="burger">
                      <div class="burger-line1">
@@ -46,7 +46,7 @@
     </header>
 </head>
 <body>
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -72,7 +72,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <div class="d-block w-100 main-banner">
+            <div class="d-block w-100 sec-banner">
                 <div class="container">
                     <div class="main-banner-textblock">
                         <div class="main-banner-textblock-breadcrumbs">
@@ -131,7 +131,7 @@
             были готовы к каким-либо изменениям, могли бы выступить против или за.<br><br>Данным порталом я хочу наладить связь между шестым муниципальным округом, его жителями и администрацией, поэтому каждый может оставить обращение, которое будет рассмотрено лично мною и в ближайшее время вам ответят. <br><br>
             Вы можете рассказать о проблеме, предложить идеи для улучшения округа или запросить поддержку от администрации на какие-либо благие цели. Не оставайтесь в стороне, если
             у вас есть что сказать администрации - отправьте обращение.</p>
-            <button class="button about-margin-top">Оставить обращение</button>
+            <button class="button about-margin-top p-7">Оставить обращение</button>
         </div>
     </div>
 </section>
@@ -181,7 +181,7 @@
                 </div>
             </div>
             <div class="news-right">
-                <div class="news-right-item">
+                <div class="news-right-item pt-0">
                     <p class="news-right-item-date">01 ноября 2019 года</p>
                     <a href="" class="news-row-item-title">Встреча с избирателями</a>
                 </div>
@@ -197,9 +197,9 @@
                     <p class="news-right-item-date">01 ноября 2019 года</p>
                     <a href="" class="news-row-item-title">Встреча с избирателями</a>
                 </div>
-                <div class="news-right-item">
+                <div class="news-right-item pb-0">
                     <p class="news-right-item-date">02 ноября 2019 года</p>
-                    <a href="" class="news-row-item-title">Дмитрий Турушев призвал администрацию отремонтировать дороги</a>
+                    <a href="" class="news-row-item-title">Для жителей 6 округа организована особая система льгот</a>
                 </div>
             </div>
         </div>
@@ -256,7 +256,7 @@
                 <div class="district-in-numbers-items">
                         <div class="district-row mr-76">
                             <div class="district-item">
-                                <p class="number"> 67773</p>
+                                <p class="number text-nowrap"> 67773</p>
                                 <p>Жителей округа</p>
                             </div>
                             <div class="district-item">
@@ -284,7 +284,7 @@
                          </div>
                 </div>
             </div>
-        <div class="main-banner-button-block"><a class="main-banner-button" href="#">Подробнее об округе</a></div>
+        <div class="main-banner-button-block"><a class="main-banner-button main-banner-button_new" href="#">Подробнее об округе</a></div>
     </div>
 </section>
     <div class="com-with-adm">
@@ -328,6 +328,7 @@
                         <div class="additional-files">
                             <div class="additional-files__title">Дополнительные файлы</div>
                             <div class="additional-files__download">
+                                <input type="file" name="file[]">
                                 <div class="additional-files__expansion">JPG, PDF, PNG, docx</div>
                                 <img src="img/icon.svg" alt="download">
                             </div>
@@ -357,10 +358,10 @@
             округ №6
             </a>
             <div class="header-info-contacts footer-info-contacts">
-                <p>+7 3952 42 22 43</p>
+                <a href="tel:+73952422243"><p>+7 3952 42 22 43</p></a>
             </div>
             <div class="footer-email">
-                <p>mail@irk6.gov.ru</p>
+               <a href="mailto:mail@irk6.gov.ru"><p>mail@irk6.gov.ru</p></a>
             </div>
             <button class="button ml-auto">Консультация по телефону</button>
         </div>
@@ -377,7 +378,7 @@
             </div>
         </div>
         <div class="footer-copyright container pl-0 pr-0">
-            <a class="personal-info">Политика конфиденциальности</a>
+            <a class="personal-info" href="#">Политика конфиденциальности</a>
             <a href="#" class="copyright"><img src="../img/rowstudio.svg"></a>
         </div>
     </div>

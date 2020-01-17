@@ -7682,6 +7682,10 @@ body, html {
   position: relative;
   overflow-x: hidden; }
 
+input:focus, textarea:focus {
+  outline: 0;
+  outline-offset: 0; }
+
 .header-info .container {
   padding-top: 15px;
   padding-bottom: 20px;
@@ -7880,9 +7884,13 @@ body, html {
   -webkit-transition: .5s;
   transition: .5s; }
 
-.footer-info a:hover {
-  text-decoration: none;
-  color: #fff; }
+.footer-info-contacts a:hover, .footer-email a:hover {
+  -webkit-text-decoration: transparent;
+          text-decoration: transparent; }
+
+.footer-copyright a {
+  -webkit-text-decoration: transparent;
+          text-decoration: transparent; }
 
 @font-face {
   font-family: 'merriweatherregular';
@@ -7968,16 +7976,18 @@ body, html {
     font-size: 16px;
     font-family: 'Circe-Normal', sans-serif;
     color: #343E4D;
-    line-height: 22px; }
-  .about-flexbox-menu-item img {
-    margin-right: 20px; }
-  .about-flexbox-menu-item:hover {
-    background: #5A8F52; }
-    .about-flexbox-menu-item:hover p {
-      color: #fff; }
-    .about-flexbox-menu-item:hover img {
-      -webkit-filter: brightness(0) invert(1);
-              filter: brightness(0) invert(1); }
+    line-height: 22px;
+    -webkit-transition: .5s;
+    transition: .5s; }
+  .about-flexbox-menu-item svg {
+    margin-right: 20px;
+    fill: #343E4D;
+    -webkit-transition: .5s;
+    transition: .5s; }
+  .about-flexbox-menu-item:hover p {
+    color: #5A8F52; }
+  .about-flexbox-menu-item:hover svg {
+    fill: #5A8F52; }
 
 .about-flexbox-content {
   width: calc(100% - 324px);
@@ -8012,13 +8022,12 @@ body, html {
   color: #343E4D;
   font-family: 'Circe-Normal', sans-serif; }
 
-.item-active {
+.item-active, .item-active:hover {
   background: #5A8F52; }
-  .item-active p {
+  .item-active p, .item-active:hover p {
     color: #fff; }
-  .item-active img {
-    -webkit-filter: brightness(0) invert(1);
-            filter: brightness(0) invert(1); }
+  .item-active svg, .item-active:hover svg {
+    fill: white; }
 
 .pr-33 {
   padding-right: 33px; }
@@ -8072,6 +8081,14 @@ body, html {
   background-image: url("/../img/main-banner.jpg");
   height: 576px;
   background-size: cover; }
+
+.sec-banner {
+  background-image: url("/../img/distr-in-numb-backgr.png");
+  height: 576px;
+  background-size: cover; }
+
+.confidence-block__confidence:hover {
+  cursor: pointer; }
 
 .main-banner-textblock {
   padding: 112px 0 160px; }
@@ -8135,12 +8152,14 @@ body, html {
     line-height: 18px; }
 
 .main-banner-button {
-  padding: 3px 25px 7px;
+  padding: 5px 25px;
   background: rgba(90, 143, 82, 0.25);
   border: 1px solid #5A8F52;
   border-radius: 3px;
   -webkit-transition: .5s;
   transition: .5s; }
+  .main-banner-button_new {
+    padding: 3px 25px 7px; }
   .main-banner-button:hover {
     background: #5A8F52; }
 
@@ -8301,9 +8320,12 @@ body, html {
 
 .news-right-item {
   border-bottom: 1px solid #5A8F52;
-  padding: 11px 0; }
+  padding: 9px 0; }
   .news-right-item:last-child {
     border-bottom: none; }
+
+.life-block {
+  margin-bottom: 30px; }
 
 .district-life-breadcrumbs {
   display: -webkit-box;
@@ -8602,6 +8624,7 @@ body, html {
   margin-top: 8px; }
 
 .additional-files {
+  position: relative;
   display: -webkit-box;
   display: flex;
   width: 100%;
@@ -8618,12 +8641,14 @@ body, html {
   .additional-files__download {
     display: -webkit-box;
     display: flex;
+    position: relative;
     padding: 6px 8px 4px 12px;
     background: #F5F7FB;
     border-radius: 5px;
     width: 58%;
     -webkit-box-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-between;
+    z-index: 0; }
   .additional-files__expansion {
     font-family: 'Circe-Normal';
     font-style: normal;
@@ -8660,7 +8685,7 @@ input[type="checkbox"] {
   width: 18px;
   height: 18px;
   position: absolute;
-  top: 6px;
+  top: 0;
   left: 0;
   cursor: pointer; }
 
@@ -8681,7 +8706,7 @@ input[type="checkbox"]:checked ~ .psevdo-checkbox:after {
     position: absolute;
     content: '';
     display: inline-block;
-    top: 4px;
+    top: 0;
     left: 0;
     width: 18px;
     height: 18px;
@@ -8694,11 +8719,51 @@ input[type="checkbox"]:checked ~ .psevdo-checkbox:after {
     position: absolute;
     content: '';
     display: inline-block;
-    top: 7px;
+    top: 3px;
     left: 3.3px;
     width: 12px;
     height: 12px;
-    border-radius: 3px; }
+    border-radius: 3px;
+    -webkit-transition: .5s;
+    transition: .5s; }
+
+.p-7 {
+  padding: 7px 23px; }
+
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  transition-property: opacity; }
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1; }
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1; }
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1; }
+
+.carousel-fade .carousel-control {
+  z-index: 2; }
+
+input[type="text"], textarea {
+  font-family: 'Circe-Normal', sans-serif; }
+
+input[type="file"] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%; }
+  input[type="file"]:hover {
+    cursor: pointer; }
 
 @media (max-width: 1199px) {
   .header-info-search input[type="text"] {
@@ -8760,13 +8825,13 @@ input[type="checkbox"]:checked ~ .psevdo-checkbox:after {
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px; }
+    margin-top: 15px; }
     .header-nav-ul li {
       -webkit-box-flex: 100%;
               flex: 100%;
       text-align: right;
       padding-top: 15px;
-      padding-bottom: 15px; }
+      padding-bottom: 5px; }
   .header-nav {
     position: absolute;
     max-width: 250px;
