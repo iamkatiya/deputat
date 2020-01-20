@@ -8191,7 +8191,11 @@ input:focus, textarea:focus {
   border: 1px solid #5A8F52;
   border-radius: 3px;
   -webkit-transition: .5s;
-  transition: .5s; }
+  transition: .5s;
+  font-family: 'Circe-Regular',sans-serif;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: .05em; }
   .main-banner-button_new {
     padding: 3px 25px 7px; }
   .main-banner-button:hover {
@@ -8841,7 +8845,7 @@ input[type="file"] {
     font-family: Circe-Normal,sans-serif; }
 
 .district-life-breadcrumbs {
-  width: 262px;
+  width: 260px;
   background: #343E4D;
   border-radius: 5px; }
 

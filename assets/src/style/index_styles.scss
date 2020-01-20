@@ -95,6 +95,10 @@
   border: 1px solid #5A8F52;
   border-radius: 3px;
   transition: .5s;
+  font-family: 'Circe-Regular',sans-serif;
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: .05em;
   &_new
   {
     padding: 3px 25px 7px;
@@ -809,7 +813,7 @@ input[type="file"] {
 }
 .district-life-breadcrumbs
 {
-  width: 262px;
+  width: 260px;
   background: #343E4D;
   border-radius: 5px;
 }
