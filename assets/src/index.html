@@ -89,7 +89,7 @@
             были готовы к каким-либо изменениям, могли бы выступить против или за.<br><br>Данным порталом я хочу наладить связь между шестым муниципальным округом, его жителями и администрацией, поэтому каждый может оставить обращение, которое будет рассмотрено лично мною и в ближайшее время вам ответят. <br><br>
             Вы можете рассказать о проблеме, предложить идеи для улучшения округа или запросить поддержку от администрации на какие-либо благие цели. Не оставайтесь в стороне, если
             у вас есть что сказать администрации - отправьте обращение.</p>
-            <button class="button about-margin-top p-7">Оставить обращение</button>
+            <div class="mt-50"> <a class="button about-margin-top scroll-menu p-7" href="#item2">Оставить обращение</a></div>
         </div>
     </div>
 </section>
@@ -123,7 +123,8 @@
     <div class="container pl-0 pr-0">
         <h2 class="blocks-head">Жизнь округа</h2>
            <div class="district-life-breadcrumbs">
-                <p class="green-little-line">Новости</p><p>Мероприятия</p>
+                <div class="district-life-breadcrumbs-button active-button"><p>Новости</p></div>
+               <div class="district-life-breadcrumbs-button"><p>Мероприятия</p></div>
             </div>
         <div class="life-block flex-box">
             <div class="life-row">
@@ -245,7 +246,7 @@
         <div class="main-banner-button-block"><a class="main-banner-button main-banner-button_new" href="#">Подробнее об округе</a></div>
     </div>
 </section>
-    <div class="com-with-adm">
+    <div class="com-with-adm" id="item2">
         <div class="container">
             <h2 class="com-with-adm__title">Связь с администрацией</h2>
             <div class="contact-block">
@@ -294,9 +295,9 @@
                         <div class="confidence-block">
                             <input type="checkbox" name="confidence" id="confidence" value="Разрешаю обработку персональных данных" required="">
                             <span class="psevdo-checkbox"></span>
-                            <label for="confidence" class="confidence-block__confidence">
+                            <a class="confidence-block__confidence" href="policy-privacy.html" target="_blank">
                                 Я ознакомлен(-а) с политикой конфеденациальности
-                            </label>
+                            </a>
                             <input type="submit" class="button" value="Отправить обращение">
                         </div>
                     </form>

@@ -18451,6 +18451,20 @@ $(document).ready(function () {
         var para1 = $('#myDiv3');
         para1.prependTo( '#myDiv2' );
     }
+    $('.district-life-breadcrumbs-button').click(function ()
+    {
+        $(".district-life-breadcrumbs-button").removeClass('active-button');
+        $(this).addClass('active-button');
+    });
+});
+$(document).on('click', function (e) {
+    if (e.target.closest('.scroll-menu')) {
+        var headr = e.target.closest('.scroll-menu').getAttribute("href");
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $(headr).offset().top
+        }, 2000);
+    }
 });
 $('#burger').click(function () {
 

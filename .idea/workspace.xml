@@ -31,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lineischikNew" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -72,7 +72,11 @@
       <workItem from="1579154292942" duration="3253000" />
       <workItem from="1579159212007" duration="4040000" />
       <workItem from="1579168283390" duration="14000" />
-      <workItem from="1579241473169" duration="5437000" />
+      <workItem from="1579241473169" duration="7575000" />
+      <workItem from="1579249066948" duration="724000" />
+      <workItem from="1579252353575" duration="1658000" />
+      <workItem from="1579254029160" duration="550000" />
+      <workItem from="1579501714281" duration="8305000" />
     </task>
     <servers />
   </component>
@@ -80,14 +84,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579168295428">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1579512511869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579168295428" />
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579168283412">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579512511869" />
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1579501718683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579168283412" />
+    <state x="655" y="342" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579501718683" />
     <state x="657" y="257" width="606" height="526" key="find.popup" timestamp="1579066620235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

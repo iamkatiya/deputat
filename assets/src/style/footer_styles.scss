@@ -6,10 +6,32 @@
 .footer-info-contacts
 {
   margin-left: 60px;
+  display: flex;
+  align-items: center;
+  p
+  {
+    transition: .5s;
+    background-image: none;
+    padding-left: 12px;
+  }
+  svg
+  {
+    transition: .5s;
+    fill: white;
+  }
+  &:hover
+  {
+    p {
+      color: #5A8F52;
+    }
+    svg
+    {
+      fill: #5A8F52;
+    }
+  }
 }
 .footer-email p
 {
-  background-image: url("/../img/mail-icon.svg");
   background-repeat: no-repeat;
   background-position-x: left;
   background-position-y: center;
@@ -17,13 +39,31 @@
   font-size: 14px;
   color: #fff;
   margin-bottom: 0;
-  padding-left: 25px;
+  padding-left: 12px;
   letter-spacing: 0.05em;
   padding-top: 2px;
+  transition: .5s;
 }
 .footer-email
 {
   margin-left: 53px;
+  display: flex;
+  align-items: center;
+  svg
+  {
+    transition: .5s;
+    fill: white;
+  }
+  &:hover
+  {
+    p {
+      color: #5A8F52;
+    }
+    svg
+    {
+      fill: #5A8F52;
+    }
+  }
 }
 .footer-nav
 {

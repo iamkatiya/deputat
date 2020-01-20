@@ -32,8 +32,13 @@
 {
   font-family: merriweatherbold, sans-serif;
   font-size: 18px;
-  color: #fff;
   line-height: 18px;
+  color: #fff!important;
+  &:hover
+  {
+    color: #fff!important;
+    text-decoration: transparent;
+  }
 }
 .blocks-head
 {

@@ -170,6 +170,14 @@
 {
   padding: 50px 0 50px 80px;
   position: relative;
+  a
+  {
+    &:hover
+    {
+      color: white;
+      text-decoration: transparent;
+    }
+  }
 }
 .quotes
 {
@@ -207,6 +215,7 @@
   background: rgba(255, 255, 255, 0.91);
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  transition: .5s;
   padding: 25px 24px 24px 30px;
   h3
   {
@@ -235,6 +244,10 @@
       color: #fff;
       text-decoration: none;
     }
+  }
+  &:hover
+  {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
   }
 }
 .support-programs-block-item:first-child
@@ -278,8 +291,14 @@
   {
     font-family: 'Circe-Normal',sans-serif;
     font-size: 14px;
-    color: #A7A7A7;
+    color: white;
     margin-bottom: 6px;
+  }
+  a {
+    transition: .5s;
+    &:hover {
+      color: #5A8F52;
+    }
   }
 }
 .news-row-item-title, .news-row-item-title:hover
@@ -310,16 +329,17 @@
 .district-life-breadcrumbs
 {
   display: flex;
-  padding-top: 20px;
-  padding-bottom: 25px;
+  margin-top: 20px;
+  margin-bottom: 25px;
   p
   {
     font-size: 18px;
     font-family: 'Circe-Bold', sans-serif;
+    margin-bottom: 0;
   }
   .green-little-line
   {
-    color: #343E4D;
+    color: white;
   }
   .green-little-line::before
   {
@@ -331,9 +351,14 @@
 {
   margin-right: 28px;
 }
+.news-right-item-date
+{
+  color: #A7A7A7!important;
+}
 .news-row-item-date
 {
   margin-top: 25px;
+  color: #A7A7A7!important;
 }
 .gallery
 {
@@ -354,6 +379,11 @@
   img
   {
     width: 100%;
+    transition: .5s;
+    &:hover
+    {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
   }
   &:first-child
   {
@@ -653,6 +683,11 @@
     opacity: 0.5;
     margin-left: 27px;
     margin-bottom: 0;
+    &:hover
+    {
+      text-decoration: transparent;
+      color: #5A8F52;
+    }
   }
 }
 
@@ -751,5 +786,48 @@ input[type="file"] {
   &:hover
   {
     cursor: pointer;
+  }
+}
+.mt-50
+{
+  margin-top: 50px;
+}
+.policy
+{
+  padding: 40px 0;
+  b {
+    font-size: 18px;
+    color: #343e4d;
+    font-family: Circe-Bold,sans-serif;
+  }
+  p {
+    font-size: 16px;
+    line-height: 140%;
+    color: #343e4d;
+    font-family: Circe-Normal,sans-serif;
+  }
+}
+.district-life-breadcrumbs
+{
+  width: 262px;
+  background: #343E4D;
+  border-radius: 5px;
+}
+.district-life-breadcrumbs-button
+{
+  padding: 9px 20px;
+  border-radius: 5px;
+  &:hover
+  {
+    cursor: pointer;
+  }
+}
+.active-button
+{
+  background: #5A8F52;
+  transition: .3s;
+  &:hover
+  {
+    cursor: auto;
   }
 }
