@@ -18507,3 +18507,14 @@ $(window).scroll(function () {
         });
     }
 });
+document.querySelector('.additional-files__download input').onchange = function() {
+    if (this.files[0]){ // если выбрали файл
+        document.querySelector('.additional-files__expansion').innerHTML = this.files[0].name;
+        // $('.additional-files').append(' <div class="additional-files__download mt-3 ml-auto">\n' +
+        //     '                                <input type="file" name="file[]">\n' +
+        //     '                                <div class="additional-files__expansion">JPG, PDF, PNG, docx</div>\n' +
+        //     '                                <img src="img/icon.svg" alt="download">\n' +
+        //     '                            </div>');
+        // $('.additional-files').addClass('flex-wrap')
+    }
+};
