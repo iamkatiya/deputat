@@ -7,17 +7,31 @@ $(document).ready(function () {
     });
     if ($(window).width() <= 991) {
         var para = $('#myDiv1>form');
-        para.prependTo( '#myDiv2' );
+        para.prependTo('#myDiv2');
     }
     if ($(window).width() <= 440) {
         var para1 = $('#myDiv3');
-        para1.prependTo( '#myDiv2' );
+        para1.prependTo('#myDiv2');
     }
-    $('.district-life-breadcrumbs-button').click(function ()
-    {
+    $('.district-life-breadcrumbs-button').click(function () {
         $(".district-life-breadcrumbs-button").removeClass('active-button');
         $(this).addClass('active-button');
     });
+
+
+    ////////////////////////////////////////////////////////////
+
+    document
+        .querySelector('.additional-files__download input')
+        .setAttribute('accept', 'image/jpeg, image/png, application/pdf, .docx') // поправить в HTML!!!!
+
+    var loadFilesDiv = document.querySelector('.additional-files__download')
+
+    var limit = 3 // максимальное кол-во файлов
+
+    loadFilesDiv.addEventListener('click', clickDivContent.bind(null, limit))
+
+
 });
 $(document).on('click', function (e) {
     if (e.target.closest('.scroll-menu')) {
@@ -30,15 +44,13 @@ $(document).on('click', function (e) {
 });
 $('#burger').click(function () {
 
-    if($(".header-nav").hasClass('open'))
-    {
+    if ($(".header-nav").hasClass('open')) {
         $('.header-nav').removeClass('open')
         $('.burger-line1').removeClass('burger-transform-1');
         $('.burger-line2').removeClass('burger-transform-2');
         $('.burger-line3').removeClass('burger-transform-3');
     }
-    else
-    {
+    else {
         $('.header-nav').addClass('open');
         $('.burger-line1').addClass('burger-transform-1');
         $('.burger-line2').addClass('burger-transform-2');
@@ -69,14 +81,61 @@ $(window).scroll(function () {
         });
     }
 });
-document.querySelector('.additional-files__download input').onchange = function() {
-    if (this.files[0]){ // если выбрали файл
-        document.querySelector('.additional-files__expansion').innerHTML = this.files[0].name;
-        // $('.additional-files').append(' <div class="additional-files__download mt-3 ml-auto">\n' +
-        //     '                                <input type="file" name="file[]">\n' +
-        //     '                                <div class="additional-files__expansion">JPG, PDF, PNG, docx</div>\n' +
-        //     '                                <img src="img/icon.svg" alt="download">\n' +
-        //     '                            </div>');
-        // $('.additional-files').addClass('flex-wrap')
+
+function addInput(limit) {
+    var content = document.createElement('div')
+    content.classList.add('additional-files__download')
+    content.addEventListener('click', clickDivContent.bind(null, limit))
+
+    content.innerHTML = '<input type="file" accept="image/jpeg, image/png, application/pdf, .docx">' +
+        '<div class="additional-files__expansion">JPG, PDF, PNG, docx</div>' +
+        '<img src="img/icon.svg" alt="download">'
+
+    this.parentElement.parentElement.append(content)
+}
+
+function clearInput() {
+    var divExpansion = this.parentElement.children[1]
+    var img = this.parentElement.children[2]
+
+    divExpansion.innerHTML = 'JPG, PDF, PNG, docx'
+
+    img.setAttribute('src', 'img/icon.svg')
+    img.setAttribute('alt', 'download')
+    img.removeAttribute('style')
+
+    this.parentElement.innerHTML = this.parentElement.innerHTML
+}
+
+function clickDivContent(limit, event) {
+
+    var inputCount = event.target.parentElement.parentElement.children.length
+
+    if (event.target.tagName === 'INPUT') {
+        var input = event.target,
+            divExpansion = event.target.parentElement.children[1],
+            img = event.target.parentElement.children[2]
+
+
+        input.onchange = function () {
+            if (this.files[0]) {
+                divExpansion.innerHTML = this.files[0].name
+                img.setAttribute('src', 'img/close.svg')
+                img.setAttribute('alt', 'close')
+                img.setAttribute('style', 'z-index: 11;') // FIX THIS!!!!
+                img.addEventListener('click', clearInput.bind(this))
+
+                if (limit > inputCount) {
+                    addInput.call(this, limit)
+                }
+
+            } else {
+                divExpansion.innerHTML = 'JPG, PDF, PNG, doc'
+                img.setAttribute('src', 'img/icon.svg')
+                img.setAttribute('alt', 'download')
+                img.removeAttribute('style')
+            }
+        }
     }
-};
+
+}

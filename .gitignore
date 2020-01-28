@@ -1,3 +1,4 @@
 assets/build/
 node_modules/
 assets/build/css/main.min.css.map
+.idea/workspace.xml
