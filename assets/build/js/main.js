@@ -18529,9 +18529,9 @@ function addInput(limit) {
 function clearInput(divExpansion, img) {
     divExpansion.innerHTML = 'JPG, PDF, PNG, docx'
 
-    img.setAttribute('src', 'img/icon.svg')
-    img.setAttribute('alt', 'download')
+    img = setAttributes(img, ['src', 'alt'], ['img/icon.svg', 'download'])
     img.removeAttribute('style')
+
     this.value = null // work for EI 11+
 }
 
@@ -18547,9 +18547,8 @@ function clickDivContent(limit, event) {
         input.onchange = function () {
             if (this.files[0]) {
                 divExpansion.innerHTML = this.files[0].name
-                img.setAttribute('src', 'img/close.svg')
-                img.setAttribute('alt', 'close')
-                img.setAttribute('style', 'z-index: 11;')
+
+                img = setAttributes(img, ['src', 'alt', 'style'], ['img/close.svg', 'close', 'z-index: 11;'])
                 img.addEventListener('click', clearInput.bind(this, divExpansion, img))
 
                 if (limit > inputCount) {
@@ -18558,11 +18557,24 @@ function clickDivContent(limit, event) {
 
             } else {
                 divExpansion.innerHTML = 'JPG, PDF, PNG, doc'
-                img.setAttribute('src', 'img/icon.svg')
-                img.setAttribute('alt', 'download')
+                img = setAttributes(img, ['src', 'alt'], ['img/icon.svg', 'download'])
                 img.removeAttribute('style')
             }
         }
     }
+
+}
+
+function setAttributes(obj, keys, values) {
+
+    if (keys.length !== values.length) console.error('setAttributes', 'Несовпадающие длины параметров')
+
+    if (obj === {} || obj === null) return obj
+
+    for (var i = 0; i < keys.length; i++) {
+        obj.setAttribute(keys[i], values[i])
+    }
+
+    return obj
 
 }
