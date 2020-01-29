@@ -76,7 +76,7 @@ $(window).scroll(function () {
     }
 });
 
-function addInput(limit, test) {
+function addInput(limit) {
     var content = document.createElement('div')
     content.classList.add('additional-files__download')
     content.addEventListener('click', clickDivContent.bind(null, limit))
