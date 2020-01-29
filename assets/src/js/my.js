@@ -19,12 +19,6 @@ $(document).ready(function () {
     });
 
 
-    ////////////////////////////////////////////////////////////
-
-    document
-        .querySelector('.additional-files__download input')
-        .setAttribute('accept', 'image/jpeg, image/png, application/pdf, .docx') // поправить в HTML!!!!
-
     var loadFilesDiv = document.querySelector('.additional-files__download')
 
     var limit = 3 // максимальное кол-во файлов
