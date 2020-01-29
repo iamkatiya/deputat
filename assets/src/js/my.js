@@ -76,7 +76,7 @@ $(window).scroll(function () {
     }
 });
 
-function addInput(limit) {
+function addInput(limit, test) {
     var content = document.createElement('div')
     content.classList.add('additional-files__download')
     content.addEventListener('click', clickDivContent.bind(null, limit))
@@ -85,39 +85,34 @@ function addInput(limit) {
         '<div class="additional-files__expansion">JPG, PDF, PNG, docx</div>' +
         '<img src="img/icon.svg" alt="download">'
 
-    this.parentElement.parentElement.append(content)
+    this.closest('.test').append(content)
 }
 
-function clearInput() {
-    var divExpansion = this.parentElement.children[1]
-    var img = this.parentElement.children[2]
-
+function clearInput(divExpansion, img) {
     divExpansion.innerHTML = 'JPG, PDF, PNG, docx'
 
     img.setAttribute('src', 'img/icon.svg')
     img.setAttribute('alt', 'download')
     img.removeAttribute('style')
-
-    this.parentElement.innerHTML = this.parentElement.innerHTML
+    this.value = null // work for EI 11+
 }
 
 function clickDivContent(limit, event) {
 
-    var inputCount = event.target.parentElement.parentElement.children.length
+    var inputCount = event.target.closest('.test').children.length
 
     if (event.target.tagName === 'INPUT') {
         var input = event.target,
-            divExpansion = event.target.parentElement.children[1],
-            img = event.target.parentElement.children[2]
-
+            divExpansion = input.closest('div').children[1],
+            img = input.closest('div').children[2]
 
         input.onchange = function () {
             if (this.files[0]) {
                 divExpansion.innerHTML = this.files[0].name
                 img.setAttribute('src', 'img/close.svg')
                 img.setAttribute('alt', 'close')
-                img.setAttribute('style', 'z-index: 11;') // FIX THIS!!!!
-                img.addEventListener('click', clearInput.bind(this))
+                img.setAttribute('style', 'z-index: 11;')
+                img.addEventListener('click', clearInput.bind(this, divExpansion, img))
 
                 if (limit > inputCount) {
                     addInput.call(this, limit)
