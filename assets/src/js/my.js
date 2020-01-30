@@ -6,12 +6,10 @@ $(document).ready(function () {
         animateOut: 'fadeOut',
     });
     if ($(window).width() <= 991) {
-        var para = $('#myDiv1>form');
-        para.prependTo('#myDiv2');
+        $('#myDiv1>form').prependTo('#myDiv2');
     }
     if ($(window).width() <= 440) {
-        var para1 = $('#myDiv3');
-        para1.prependTo('#myDiv2');
+       $('#myDiv3').prependTo('#myDiv2');
     }
     $('.district-life-breadcrumbs-button').click(function () {
         $(".district-life-breadcrumbs-button").removeClass('active-button');
