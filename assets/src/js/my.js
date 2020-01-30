@@ -9,7 +9,7 @@ $(document).ready(function () {
         $('#myDiv1>form').prependTo('#myDiv2');
     }
     if ($(window).width() <= 440) {
-       $('#myDiv3').prependTo('#myDiv2');
+        $('#myDiv3').prependTo('#myDiv2');
     }
     $('.district-life-breadcrumbs-button').click(function () {
         $(".district-life-breadcrumbs-button").removeClass('active-button');
@@ -17,14 +17,47 @@ $(document).ready(function () {
     });
 
 
-    var loadFilesDiv = document.querySelector('.additional-files__download')
+    // var loadFilesDiv = document.querySelector('.additional-files__download')
 
     var limit = 3 // максимальное кол-во файлов
 
-    loadFilesDiv.addEventListener('click', clickDivContent.bind(null, limit))
+    // loadFilesDiv.addEventListener('click', clickDivContent.bind(null, limit))
 
+    $('.additional-files__download input').on('change', inputHandler.bind(null, limit))
 
 });
+
+function inputHandler(limit, event) {
+    if (event.target.tagName === 'INPUT') {
+        var $input = $(event.target),
+            $divExpansion = $input.parent().children('div'),
+            $img = $input.parent().children('img')
+
+        if ($input[0].files[0]) {
+            $divExpansion.text($input[0].files[0].name)
+            $img.attr({
+                src: 'img/close.svg',
+                alt: 'close'
+            }).css('z-index', '11').on('click', imgCLoseHandler.bind(null, $img, $divExpansion, $input))
+        }
+
+    }
+
+}
+
+function imgCLoseHandler($img, $divExpansion, $input) {
+    $divExpansion.text('JPG, PDF, PNG, docx')
+    $img.attr({
+        src: 'img/icon.svg',
+        alt: 'download'
+    }).removeAttr('style')
+
+    $input.val(null)
+}
+
+
+
+
 $(document).on('click', function (e) {
     if (e.target.closest('.scroll-menu')) {
         var headr = e.target.closest('.scroll-menu').getAttribute("href");
