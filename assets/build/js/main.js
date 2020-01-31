@@ -18454,16 +18454,30 @@ $(document).ready(function () {
         $(this).addClass('active-button');
     });
 
-
-    // var loadFilesDiv = document.querySelector('.additional-files__download')
-
     var limit = 3 // максимальное кол-во файлов
-
-    // loadFilesDiv.addEventListener('click', clickDivContent.bind(null, limit))
 
     $('.additional-files__download input').on('change', inputHandler.bind(null, limit))
 
 });
+
+function addInput($cloneEl, limit) {
+    $cloneEl
+        .children('input')
+        .val(null)
+        .on('change', inputHandler.bind(null, limit))
+    $cloneEl
+        .children('img')
+        .attr({
+            src: 'img/icon.svg',
+            alt: 'download'
+        })
+        .css('z-index', '')
+    $cloneEl
+        .children('div')
+        .text('JPG, PDF, PNG, docx')
+    $cloneEl
+        .appendTo($('.test'))
+}
 
 function inputHandler(limit, event) {
     if (event.target.tagName === 'INPUT') {
@@ -18476,25 +18490,32 @@ function inputHandler(limit, event) {
             $img.attr({
                 src: 'img/close.svg',
                 alt: 'close'
-            }).css('z-index', '11').on('click', imgCLoseHandler.bind(null, $img, $divExpansion, $input))
+            }).css('z-index', '11').on('click', imgCloseHandler.bind(null, $img, $divExpansion, $input))
+            if (limit > $input.closest('.test').children().length) {
+                addInput.call(null, $input.parent().clone(), limit)
+            }
+        } else {
+            $divExpansion.text('JPG, PDF, PNG, docx')
+            $img.attr({
+                src: 'img/icon.svg',
+                alt: 'download'
+            }).css('z-index', '')
+            $input.val(null)
         }
 
     }
 
 }
 
-function imgCLoseHandler($img, $divExpansion, $input) {
+function imgCloseHandler($img, $divExpansion, $input) {
     $divExpansion.text('JPG, PDF, PNG, docx')
     $img.attr({
         src: 'img/icon.svg',
         alt: 'download'
-    }).removeAttr('style')
+    }).css('z-index', '')
 
     $input.val(null)
 }
-
-
-
 
 $(document).on('click', function (e) {
     if (e.target.closest('.scroll-menu')) {
@@ -18544,68 +18565,3 @@ $(window).scroll(function () {
         });
     }
 });
-
-function addInput(limit) {
-    var content = document.createElement('div')
-    content.classList.add('additional-files__download')
-    content.addEventListener('click', clickDivContent.bind(null, limit))
-
-    content.innerHTML = '<input type="file" accept="image/jpeg, image/png, application/pdf, .docx">' +
-        '<div class="additional-files__expansion">JPG, PDF, PNG, docx</div>' +
-        '<img src="img/icon.svg" alt="download">'
-
-    this.closest('.test').append(content)
-}
-
-function clearInput(divExpansion, img) {
-    divExpansion.innerHTML = 'JPG, PDF, PNG, docx'
-
-    img = setAttributes(img, ['src', 'alt'], ['img/icon.svg', 'download'])
-    img.removeAttribute('style')
-
-    this.value = null // work for EI 11+
-}
-
-function clickDivContent(limit, event) {
-
-    var inputCount = event.target.closest('.test').children.length
-
-    if (event.target.tagName === 'INPUT') {
-        var input = event.target,
-            divExpansion = input.closest('div').children[1],
-            img = input.closest('div').children[2]
-
-        input.onchange = function () {
-            if (this.files[0]) {
-                divExpansion.innerHTML = this.files[0].name
-
-                img = setAttributes(img, ['src', 'alt', 'style'], ['img/close.svg', 'close', 'z-index: 11;'])
-                img.addEventListener('click', clearInput.bind(this, divExpansion, img))
-
-                if (limit > inputCount) {
-                    addInput.call(this, limit)
-                }
-
-            } else {
-                divExpansion.innerHTML = 'JPG, PDF, PNG, doc'
-                img = setAttributes(img, ['src', 'alt'], ['img/icon.svg', 'download'])
-                img.removeAttribute('style')
-            }
-        }
-    }
-
-}
-
-function setAttributes(obj, keys, values) {
-
-    if (keys.length !== values.length) console.error('setAttributes', 'Несовпадающие длины параметров')
-
-    if (obj === {} || obj === null) return obj
-
-    for (var i = 0; i < keys.length; i++) {
-        obj.setAttribute(keys[i], values[i])
-    }
-
-    return obj
-
-}
