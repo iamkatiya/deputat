@@ -6,33 +6,79 @@ $(document).ready(function () {
         animateOut: 'fadeOut',
     });
     if ($(window).width() <= 991) {
-        var para = $('#myDiv1>form');
-        para.prependTo('#myDiv2');
+        $('#myDiv1>form').prependTo('#myDiv2');
     }
     if ($(window).width() <= 440) {
-        var para1 = $('#myDiv3');
-        para1.prependTo('#myDiv2');
+        $('#myDiv3').prependTo('#myDiv2');
     }
     $('.district-life-breadcrumbs-button').click(function () {
         $(".district-life-breadcrumbs-button").removeClass('active-button');
         $(this).addClass('active-button');
     });
 
-
-    ////////////////////////////////////////////////////////////
-
-    document
-        .querySelector('.additional-files__download input')
-        .setAttribute('accept', 'image/jpeg, image/png, application/pdf, .docx') // поправить в HTML!!!!
-
-    var loadFilesDiv = document.querySelector('.additional-files__download')
-
     var limit = 3 // максимальное кол-во файлов
 
-    loadFilesDiv.addEventListener('click', clickDivContent.bind(null, limit))
-
+    $('.additional-files__download input').on('change', inputHandler.bind(null, limit))
 
 });
+
+function addInput($cloneEl, limit) {
+    $cloneEl
+        .children('input')
+        .val(null)
+        .on('change', inputHandler.bind(null, limit))
+    $cloneEl
+        .children('img')
+        .attr({
+            src: 'img/icon.svg',
+            alt: 'download'
+        })
+        .css('z-index', '')
+    $cloneEl
+        .children('div')
+        .text('JPG, PDF, PNG, docx')
+    $cloneEl
+        .appendTo($('.test'))
+}
+
+function inputHandler(limit, event) {
+    if (event.target.tagName === 'INPUT') {
+        var $input = $(event.target),
+            $divExpansion = $input.parent().children('div'),
+            $img = $input.parent().children('img')
+
+        if ($input[0].files[0]) {
+            $divExpansion.text($input[0].files[0].name)
+            $img.attr({
+                src: 'img/close.svg',
+                alt: 'close'
+            }).css('z-index', '11').on('click', imgCloseHandler.bind(null, $img, $divExpansion, $input))
+            if (limit > $input.closest('.test').children().length) {
+                addInput.call(null, $input.parent().clone(), limit)
+            }
+        } else {
+            $divExpansion.text('JPG, PDF, PNG, docx')
+            $img.attr({
+                src: 'img/icon.svg',
+                alt: 'download'
+            }).css('z-index', '')
+            $input.val(null)
+        }
+
+    }
+
+}
+
+function imgCloseHandler($img, $divExpansion, $input) {
+    $divExpansion.text('JPG, PDF, PNG, docx')
+    $img.attr({
+        src: 'img/icon.svg',
+        alt: 'download'
+    }).css('z-index', '')
+
+    $input.val(null)
+}
+
 $(document).on('click', function (e) {
     if (e.target.closest('.scroll-menu')) {
         var headr = e.target.closest('.scroll-menu').getAttribute("href");
@@ -81,61 +127,3 @@ $(window).scroll(function () {
         });
     }
 });
-
-function addInput(limit) {
-    var content = document.createElement('div')
-    content.classList.add('additional-files__download')
-    content.addEventListener('click', clickDivContent.bind(null, limit))
-
-    content.innerHTML = '<input type="file" accept="image/jpeg, image/png, application/pdf, .docx">' +
-        '<div class="additional-files__expansion">JPG, PDF, PNG, docx</div>' +
-        '<img src="img/icon.svg" alt="download">'
-
-    this.parentElement.parentElement.append(content)
-}
-
-function clearInput() {
-    var divExpansion = this.parentElement.children[1]
-    var img = this.parentElement.children[2]
-
-    divExpansion.innerHTML = 'JPG, PDF, PNG, docx'
-
-    img.setAttribute('src', 'img/icon.svg')
-    img.setAttribute('alt', 'download')
-    img.removeAttribute('style')
-
-    this.parentElement.innerHTML = this.parentElement.innerHTML
-}
-
-function clickDivContent(limit, event) {
-
-    var inputCount = event.target.parentElement.parentElement.children.length
-
-    if (event.target.tagName === 'INPUT') {
-        var input = event.target,
-            divExpansion = event.target.parentElement.children[1],
-            img = event.target.parentElement.children[2]
-
-
-        input.onchange = function () {
-            if (this.files[0]) {
-                divExpansion.innerHTML = this.files[0].name
-                img.setAttribute('src', 'img/close.svg')
-                img.setAttribute('alt', 'close')
-                img.setAttribute('style', 'z-index: 11;') // FIX THIS!!!!
-                img.addEventListener('click', clearInput.bind(this))
-
-                if (limit > inputCount) {
-                    addInput.call(this, limit)
-                }
-
-            } else {
-                divExpansion.innerHTML = 'JPG, PDF, PNG, doc'
-                img.setAttribute('src', 'img/icon.svg')
-                img.setAttribute('alt', 'download')
-                img.removeAttribute('style')
-            }
-        }
-    }
-
-}
