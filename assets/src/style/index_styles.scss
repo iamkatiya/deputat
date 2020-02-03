@@ -852,3 +852,33 @@ input[type="file"] {
   align-items: flex-end;
 
 }
+.nav-tabs {
+  border-bottom: 1px solid transparent;
+  width: 266px;
+  background: #343e4d;
+  border-radius: 5px;
+  margin-bottom: 18px;
+  margin-top: 14px;
+}
+.nav-tabs .nav-link.active {
+  color: white;
+  font-size: 18px;
+  font-family: Circe-Bold,sans-serif;
+  border-color: #5a8f52;
+  background: #5a8f52;
+  border-radius: 5px;
+
+}
+.nav-tabs .nav-link {
+  background: #343e4d;
+  border-radius: 5px;
+  font-family: Circe-Bold,sans-serif;
+  color: white;
+  font-size: 18px;
+}
+.nav-link {
+  padding: 5px 20px;
+}
+.nav-link:hover {
+  border-color: transparent!important;
+}
