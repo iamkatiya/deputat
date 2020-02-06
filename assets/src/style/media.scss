@@ -29,6 +29,10 @@
 }
 @media (max-width: 991px)
 {
+  .support-programs-block-news {
+    flex: 100%;
+    max-width: 100%;
+  }
   .about-flexbox
   {
     flex-wrap: wrap;
@@ -269,6 +273,9 @@
 }
 @media (max-width: 576px)
 {
+  .white-container {
+    padding: 28px 23px;
+  }
   .about-flexbox-content-administration, .about-flexbox-content-history {
     padding: 15px;
   }

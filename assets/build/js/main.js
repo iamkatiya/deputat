@@ -18457,6 +18457,7 @@ $(document).ready(function () {
 
     var limit = 3 // максимальное кол-во файлов
     $('.additional-files__download input').on('change', inputHandler.bind(null, limit))
+
 });
 
 function addInput($cloneEl, limit) {
