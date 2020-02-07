@@ -48,3 +48,20 @@ a {
 .breadcrumb-item.active {
   color: #343e4d;
 }
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+.row-padding {
+  padding: 15px 0;
+  border: 1px solid rgba(167, 167, 167, 0.51);
+}
+.markov-table {
+  border: 1px solid rgba(167, 167, 167, 0.51);
+}
+.f-sz-37{
+  font-size: 37px!important;
+}
